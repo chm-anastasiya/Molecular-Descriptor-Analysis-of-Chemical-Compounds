@@ -1,32 +1,52 @@
 # Molecular Property Analyzer
 A Jupyter-notebook tool for fetching, analysing and visualising molecular properties from **PubChem**.
 
+---
+
 ## Core Features
+- Retrieve compound information from PubChem (by name, SMILES, CID, etc.);
+- Collect key molecular descriptors;
+- Evaluates **Lipinski's rule** and **Veber's rule**;
+- Generate: scatter plots and radar charts.
 
-* retrieve compound information from PubChem (by **name**, **SMILES**, **CID**, etc.);
-* collect key molecular descriptors;
-* evaluates **Lipinski's rule** and **Veber's rule**;
-* generate: scatter plots and radar charts.
-
+> Descriptors are taken directly from PubChem — no local calculations.
+> 
 ---
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `main.ipynb` | User interface: input compounds (manually or from CSV), call PubChem, save results |
-| `analise.ipynb` | Utility functions for analysis, rule evaluation and plotting (scatter & radar) |
+| `main.ipynb` | User interface: manual or CSV input, PubChem queries, saving results |
+| `analise.ipynb` | Helper functions: rule evaluation, scatter plots, radar charts |
+
+---
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/chm-anastasiya/Molecular-Property-Analyser.git
+cd Molecular-Property-Analyser
+```
+Install required packages:
+
+```bash
+pip install pubchempy pandas numpy matplotlib
+```
 
 ## Quick Start
+Open and run Jupyter notebook **main.ipynb**
+Follow the menu inside the notebook:
+* 1 – manual input of compounds
+* 2 – load from CSV
+* 0 – exit
+  
+> CSV files should contain one column with identifiers (names, SMILES, CIDs or InChI).
 
-**Clone the repository**
-
-   ```bash
-   git clone https://github.com/chm-anastasiya/
-   ```
-
-**Create and activate conda environment**  
-   ```bash
-   conda env create -f environment.yml
-   conda activate 
-   ```
+| Folder          | Content                         |
+| --------------- | ------------------------------- |
+| `results/`      | CSV files                       |                  
+| `plots/`        | Scatter plots                   |
+| `plots/radars/` | Radar charts                    |
+| `images/`       | 2D PNG structures from PubChem  |
