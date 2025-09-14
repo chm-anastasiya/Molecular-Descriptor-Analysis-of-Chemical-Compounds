@@ -1,12 +1,12 @@
 # Molecular Property Analyzer
-A Jupyter-notebook tool for fetching, analysing and visualising molecular properties from **PubChem**.
+`main.ipynb` is a jupyter-notebook tool for fetching, analysing and visualising molecular properties from **PubChem**.
 
 ---
 
 ## Core Features
 - Retrieve compound information from PubChem (by name, SMILES, CID, etc.);
 - Collect key molecular descriptors;
-- Evaluates **Lipinski's rule** and **Veber's rule**;
+- Evaluates **Lipinski's rule of five** and **Veber's rule**;
 - Generate: scatter plots and radar charts.
 
 > Descriptors are taken directly from PubChem — no local calculations.
@@ -39,14 +39,16 @@ pip install pubchempy pandas numpy matplotlib
 Open and run Jupyter notebook **main.ipynb**
 Follow the menu inside the notebook:
 * 1 – manual input of compounds
-* 2 – load from CSV
+* 2 – load from CSV (a sample test_compounds.csv is provided)
 * 0 – exit
+
   
 > CSV files should contain one column with identifiers (names, SMILES, CIDs or InChI).
+> If a value itself contains "," or ";", wrap it in double quotes ("...").
 
-| Folder          | Content                         |
-| --------------- | ------------------------------- |
-| `results/`      | CSV files                       |                  
-| `plots/`        | Scatter plots                   |
-| `plots/radars/` | Radar charts                    |
-| `images/`       | 2D PNG structures from PubChem  |
+| Folder          | Content                                     |
+| --------------- | --------------------------------------------|
+| `results/`      | CSV files with retrieved properties         |                  
+| `plots/`        | Scatter plots for each descriptor           |
+| `plots/radars/` | Radar charts for all compounds              |
+| `images/`       | 2D PNG structures from PubChem              |
